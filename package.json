@@ -1,29 +1,43 @@
 {
   "name": "git-commit-delete",
   "displayName": "Git Commit Delete",
-  "description": "VS Code extension to delete commits from git history via timeline.",
+  "description": "VS Code extension to delete git commits from the timeline.",
   "version": "0.0.1",
-  "publisher": "GeoffsCode", 
+  "publisher": "GeoffsCode",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "dependencies": {
+    "@types/vscode": "^1.56.0",
+    "@vscode/test-electron": "^2.0.0",
+    "mkdirp": "^1.0.0",
+    "glob": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "vsce": "^2.8.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && npm run compile && npm run package",
+    "compile": "tsc -p ./",
+    "package": "vsce package"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/GeoffsCode/git-commit-delete.git"
   },
-  "engines": {
-    "vscode": "^1.60.0"
+  "bugs": {
+    "url": "https://github.com/GeoffsCode/git-commit-delete/issues"
   },
-  "activationEvents": [
-    "onCommand:extension.deleteGitCommit"
+  "homepage": "https://github.com/GeoffsCode/git-commit-delete",
+  "contributors": [
+    {
+      "name": "Geoff",
+      "email": "your-email@example.com"
+    }
   ],
-  "main": "./src/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.deleteGitCommit",
-        "title": "Delete Git Commit"
-      }
-    ]
-  },
-  "dependencies": {
-    "vscode": "^1.1.37"
-  }
+  "license": "MIT"
 }

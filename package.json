@@ -1,0 +1,29 @@
+{
+  "name": "git-commit-delete",
+  "displayName": "Git Commit Delete",
+  "description": "VS Code extension to delete commits from git history via timeline.",
+  "version": "0.0.1",
+  "publisher": "GeoffsCode", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeoffsCode/git-commit-delete.git"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.deleteGitCommit"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.deleteGitCommit",
+        "title": "Delete Git Commit"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  }
+}
